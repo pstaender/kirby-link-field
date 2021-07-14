@@ -9,9 +9,9 @@ load([
 use Kirby\Cms\App;
 use Kirby\Data\Yaml;
 
-App::plugin('oblik/link-field', [
+App::plugin('pstaender/uri-field', [
     'fields' => [
-        'link' => [
+        'uri' => [
             'mixins' => ['pagepicker', 'filepicker'],
             'props' => [
                 'value' => function ($input = null) {
@@ -165,7 +165,7 @@ App::plugin('oblik/link-field', [
                     $data['value'] = $value[0]['id'] ?? null;
                 }
 
-                return $data;
+                return $data['value'];
             }
         ]
     ],
